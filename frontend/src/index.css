@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+/* Add your custom styles below */
+/* Navigation Header fixes */
+nav.glass-card {
+    position: sticky !important;
+    top: 0;
+    z-index: 9999 !important;
+    backdrop-filter: blur(20px) saturate(200%);
+    -webkit-backdrop-filter: blur(20px) saturate(200%);
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure proper stacking context */
+.min-h-screen {
+    position: relative;
+    z-index: 1;
+}
+
+/* Main content container adjustments */
+.HomePage {
+    padding-top: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Glass card improvements */
+.glass-card {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(16px) saturate(200%);
+    -webkit-backdrop-filter: blur(16px) saturate(200%);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+}
+
+/* Additional responsive fixes for header */
+@media (max-width: 768px) {
+    nav.glass-card {
+        background: rgba(255, 255, 255, 0.98) !important;
+    }
+}
+
+/* Prevent content from showing through header */
+.max-w-7xl {
+    position: relative;
+    z-index: auto;
+}
+
+/* Enhanced backdrop blur for better visibility */
+nav.glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: -1;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
